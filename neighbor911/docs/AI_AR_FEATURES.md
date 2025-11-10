@@ -1,7 +1,7 @@
 # Neighbor 911 - AI, AR, and Advanced Features
 
 **Version:** 0.2 (Draft)
-**Last Updated:** 2025-01-09
+**Last Updated:** 2025-11-10
 **Status:** ⚠️ **DRAFT - FUTURE FEATURES**
 **Organization:** Lifesaver Labs Public Benefit Corporation
 
@@ -533,8 +533,868 @@ AI: "That's okay. Call 911 - they can locate you from your phone.
 
 ## 3. AI-Assisted PSAP Audio Monitoring
 
-[Content continues with PSAP monitoring, AR navigation, armed responder protocols, legal witness mode as before, but all examples now properly defer to 911 for critical emergencies]
+### 3.1 Overview
+
+**Purpose:** AI monitors 911 calls (with user consent) to extract actionable information for neighbor dispatch coordination.
+
+**Key Principle:** AI is a **passive listener and coordinator**, never interrupting or replacing PSAP dispatcher authority.
+
+### 3.2 What AI Monitors For
+
+When user is on a 911 call and has opted into Neighbor 911 audio monitoring:
+
+✅ **Location confirmation** - Extract address, apartment number, cross streets
+✅ **Emergency type** - Cardiac arrest, overdose, fire, etc.
+✅ **Needed capabilities** - CPR, AED, naloxone, fire extinguisher
+✅ **EMS ETA** - "Paramedics are 12 minutes out"
+✅ **Scene safety** - "Is the attacker still there?" → Don't dispatch if unsafe
+✅ **Updates from dispatcher** - "Start CPR now" → Send CPR-capable responders priority
+
+### 3.3 Privacy & Consent
+
+**User must explicitly opt-in:**
+```
+During onboarding:
+□ Allow Neighbor 911 AI to monitor my 911 calls
+  to coordinate neighbor response faster
+
+What this means:
+• AI listens to your 911 calls to extract address, emergency type
+• AI uses this to dispatch nearby neighbors with right skills
+• Audio is NOT recorded or stored
+• 911 dispatcher remains in full control
+• You can disable this anytime in Settings
+```
+
+**Technical safeguards:**
+- Audio stream processed in real-time, never stored
+- AI only extracts structured data (address, emergency type, ETA)
+- No audio recordings retained
+- HIPAA-compliant processing
+- User can revoke consent anytime
+
+### 3.4 Example: AI Passive Monitoring
+
+```
+[User calls 911 directly, AI monitors with consent]
+
+911: "911, what's your emergency?"
+
+User: "My neighbor is having a seizure!"
+
+AI: [Detects: emergency_type = "seizure", location unknown yet]
+
+911: "What's the address?"
+
+User: "Um, 742 Evergreen Terrace, Apartment 3."
+
+AI: [Extracts: address = "742 Evergreen Terrace, Apt 3"]
+    [Action: Query geospatial index for nearby responders]
+
+911: "Is the person breathing?"
+
+User: "Yes, but they're shaking violently!"
+
+AI: [Detects: needed_capabilities = ["seizure_first_aid", "medical_assistance"]]
+
+911: "Paramedics are on the way, about 10 minutes out.
+     Clear the area around them so they don't hurt themselves."
+
+AI: [Extracts: ems_eta = 600 seconds]
+    [Action: Dispatch 3 nearby responders with medical training]
+    [Action: Send silent notification: "Sarah (RN) accepted, ETA 3 min"]
+
+911: "Stay with them and time the seizure. I'll stay on the line."
+
+AI: [Status update to 911 via data channel]
+    "Neighbor responder (registered nurse) en route, ETA 3 min"
+
+911: [To user] "A neighbor who's a nurse is also coming to help
+     until paramedics arrive. That okay?"
+
+User: "Yes, thank you!"
+
+[Sarah arrives, assists until EMS takes over]
+```
+
+**Key Points:**
+- AI never spoke during the call
+- 911 dispatcher remained in full control
+- AI extracted info passively and dispatched appropriately
+- 911 was informed of neighbor response via data channel
 
 ---
 
-**Would you like me to continue with the rest of the sections (AR, armed protocols, legal witness) with this corrected PSAP primacy framework, or would you like to refine the handoff protocols further first?**
+## 4. Augmented Reality (AR) Navigation
+
+### 4.1 Overview
+
+**Purpose:** Use AR to help responders navigate quickly and accurately to emergency locations, especially in complex environments (apartment buildings, office complexes, outdoor areas).
+
+**Key Insight:** In an emergency, every second counts. AR can shave 30-60 seconds off arrival time by eliminating navigation confusion.
+
+### 4.2 AR Use Cases for Neighbor 911
+
+#### 4.2.1 AR Turn-by-Turn Navigation to Emergency
+
+**Problem:** Traditional map navigation shows 2D overhead view. In stress, responders may:
+- Miss turns
+- Not recognize landmarks
+- Struggle with apartment building entrances
+- Lose time at parking/entry points
+
+**AR Solution:** Camera-based navigation with real-world overlay
+
+**User Experience:**
+```
+[Responder accepts alert]
+
+App: "CPR needed - 0.3 miles away"
+     [Start Navigation] [Call Originator]
+
+[Responder taps Start Navigation]
+
+[AR View activates - camera shows real-world view]
+
+→ Big green arrow on ground: "→ Turn right on Elm St"
+→ Distance overlay: "450 feet to emergency"
+→ Estimated time: "2 minutes walking / 1 minute running"
+
+[Responder turns corner]
+
+→ Arrow points to building: "↑ Enter building ahead"
+→ Building highlight: Green outline around correct entrance
+→ "123 Main St - Apartment 4B"
+
+[Responder enters building]
+
+→ Arrow points to elevator: "↑ Take elevator to Floor 4"
+→ Alternative: "Stairs on right (faster if <3 floors)"
+
+[Responder exits elevator on Floor 4]
+
+→ Arrow points down hallway: "→ 40 feet - Apartment 4B on left"
+→ Door highlight: Green outline around correct door
+→ "You've arrived - Ring doorbell"
+
+[Arrival notification sent to originator]
+```
+
+**Technical Implementation:**
+- ARCore (Android) / ARKit (iOS) via Flutter plugins
+  - `arcore_flutter_plugin` or `ar_flutter_plugin`
+- Google Maps API for route calculation
+- Real-time GPS + compass for orientation
+- Image recognition for building/door number identification (optional ML)
+- Fallback to 2D map if AR unavailable
+
+#### 4.2.2 AR Equipment Locator
+
+**Problem:** Emergency equipment (AEDs, fire extinguishers, first aid kits) often hidden in cabinets, behind signs, or in unmarked locations.
+
+**AR Solution:** Virtual markers showing where equipment is located
+
+**User Experience - Finding AED in Office Building:**
+```
+[Alert: "Cardiac arrest at TechCorp Office, Floor 3"]
+
+Responder: [Accepts alert, has AED access capability]
+
+App: "Nearest AED: TechCorp lobby, 0.2 miles away"
+     [Navigate to AED] [Go Directly to Emergency]
+
+[Responder taps Navigate to AED]
+
+[AR View activates]
+
+→ Arrow on ground: "↗ AED 0.2 miles northeast"
+→ Marker in distance: Floating AED icon above building
+
+[Responder arrives at building entrance]
+
+→ AR highlights AED cabinet: Green glow around cabinet on wall
+→ Text overlay: "AED inside - press to open"
+→ Distance: "15 feet to your right"
+
+[Responder retrieves AED]
+
+App: "AED retrieved. Navigate to emergency?"
+     [Yes - Start Navigation]
+
+[AR navigation to emergency location with AED in hand]
+```
+
+**Equipment Database Requirements:**
+- Crowdsourced AED locations (user submissions)
+- Verified locations (trained volunteers confirm)
+- Indoor mapping (for large buildings)
+- Access codes (if equipment is locked)
+- Equipment status (last inspection date, battery level if IoT-enabled)
+
+#### 4.2.3 AR Scene Assessment & Safety
+
+**Problem:** Responders arriving at chaotic scenes may not know:
+- Where is safe to enter?
+- Where are other responders?
+- Where is the patient?
+- What hazards exist?
+
+**AR Solution:** Real-time scene overlay with safety information
+
+**User Experience - Multi-Responder Coordination:**
+```
+[3 responders en route to same cardiac arrest]
+
+[AR View shows:]
+→ Patient location: Red pulsing marker at apartment door
+→ Other responders: Blue avatars with names and ETAs
+  - "Mike (AED) - 30 seconds away, approaching from north"
+  - "Sarah (CPR certified) - 45 seconds away, approaching from south"
+→ Your role: "You: First responder - prepare to start CPR"
+
+[Mike arrives first]
+
+App: "Mike arrived with AED. Coordinate entry together."
+
+[Both responders at door]
+
+→ AR highlights door: "Ring doorbell - originator will let you in"
+→ Safety check: "Scene reported as safe. Patient inside, conscious person present."
+
+[Inside apartment]
+
+→ AR shows roles:
+  - Mike: "Apply AED pads"
+  - Sarah: "Prepare to start CPR if needed"
+  - You: "Call out instructions from AED"
+```
+
+**Safety Overlay Features:**
+- Scene safety status: ✅ Safe / ⚠️ Caution / 🚫 Unsafe
+- Hazard markers: Fire, smoke, weapon, aggressive person
+- Safe zones: Green highlighted areas
+- Exit routes: Yellow arrows to nearest exit
+- Other responder locations: Real-time positions
+
+#### 4.2.4 AR CPR & First Aid Guidance
+
+**Problem:** Even trained responders may forget:
+- Correct hand placement
+- Compression depth (2-2.4 inches)
+- Compression rate (100-120 per minute)
+- When to use AED
+
+**AR Solution:** Visual overlay during CPR
+
+**User Experience:**
+```
+[Responder arrives, patient unconscious]
+
+App: "Start CPR. AR guidance available."
+     [Enable AR Guidance]
+
+[AR View activates, camera pointed at patient]
+
+→ Hand placement marker: Green circles on patient's chest
+  "Place hands here - center of chest"
+
+[Responder places hands]
+
+→ Depth gauge: Vertical bar showing compression depth
+  "Push 2-2.4 inches deep"
+  [Visual feedback: Green when correct depth, red if too shallow/deep]
+
+→ Metronome: Visual beat indicator
+  "100 compressions per minute"
+  [Pulsing circle on screen matching rhythm]
+
+→ Counter: "30 compressions, then 2 breaths"
+
+[After 30 compressions]
+
+App: "Give 2 rescue breaths. Tilt head back, lift chin."
+     [AR shows head tilt angle]
+
+[After 2 breaths]
+
+App: "Resume compressions. AED arriving in 30 seconds."
+
+[AED arrives]
+
+App: "Stop CPR. Apply AED pads."
+     [AR shows pad placement: Right upper chest, left lower ribs]
+
+[AED analyzes rhythm]
+
+AED: "Shock advised. Stand clear."
+
+[AR highlights safe zone: Red outline around patient, "STAND BACK"]
+
+[Shock delivered, CPR resumed with AR guidance]
+```
+
+**Technical Features:**
+- Computer vision for body position detection (optional ML)
+- Accelerometer for compression depth measurement
+- Audio metronome (accessible fallback)
+- Integration with smart AED devices (if available)
+
+#### 4.2.5 AR for Low-Light & Nighttime Response
+
+**Problem:** Emergencies at night or in dark areas make navigation difficult:
+- Can't see house numbers
+- Dark alleys/paths are confusing
+- Indoor stairwells poorly lit
+
+**AR Solution:** Enhanced vision mode
+
+**User Experience:**
+```
+[2am cardiac arrest alert, dark residential street]
+
+App: "Emergency nearby - Enable AR Night Mode?"
+     [Enable]
+
+[AR View with enhanced features:]
+→ Flashlight mode: Camera activates flash for illumination
+→ Address recognition: ML detects house numbers even in dark
+  "123 visible ahead - target is 127, continue 40 feet"
+→ Pathway highlighting: Green line on ground showing safe walking path
+→ Obstacle detection: Yellow markers on curbs, steps, hazards
+→ Building outline: Highlights correct building structure
+
+[Approaching dark apartment building]
+
+→ AR highlights entrance: "Main entrance - door on left"
+→ Light indicator: "Doorbell will alert resident"
+```
+
+**Technical Implementation:**
+- Flash/torch activation
+- Image enhancement (brightness, contrast)
+- ML-based number recognition (TensorFlow Lite)
+- Depth sensing (LiDAR on supported devices)
+
+#### 4.2.6 AR Advocacy Support (Optional Assistance, Not Borg Mode)
+
+**Philosophy: Human-First, Machine-Assisted**
+
+⚠️ **IMPORTANT:** This feature is **entirely optional** and designed for people who want backup support. Many students and adults are naturally excellent at advocacy conversations—empathetic, persuasive, balanced—and need zero help. **This is for those who want it, not for everyone.**
+
+**We don't want to turn people into the Borg.** Real conversations are human, natural, spontaneous, and authentic. AR advocacy support is a **quiet assistant in your pocket**, not a script you read robotically.
+
+**Think of it like:**
+- 📚 Having cheat notes for a presentation (glance when you need them, ignore when you don't)
+- 🎯 A debate team coach whispering reminders from the sidelines
+- 📊 A fact-checker helping you remember statistics accurately
+- 🧠 Training wheels you can remove once you're confident
+
+**The goal:** Help nonprofessionals who want extra support **outperform even further** on balanced discussion and persuasion, while staying natural and human-led.
+
+---
+
+**Problem:** Advocates responding to brain-damaging sport dissuasion, quit companion support, or other educational encounters may want help recalling:
+- Key statistics (to avoid misquoting)
+- Evidence-based talking points (when conversation stalls)
+- De-escalation techniques (if tension rises)
+- Alternative suggestions (to offer constructive solutions)
+
+**AR Solution:** Discreet, glanceable reference material—use it if you want, ignore it if you don't.
+
+**User Experience - Brain-Damaging Sport Dissuasion (Optional Mode):**
+```
+[High school football game, parent advocate responding to alert]
+
+Advocate: [Can choose to enable AR Advocacy Support—or not]
+
+App: "Would you like advocacy talking points available?
+      Many advocates prefer to speak naturally without them."
+      [Enable Support] [No Thanks, I'm Good]
+
+[If advocate enables:]
+
+[DISCREET sidebar appears - small, minimized, glanceable]
+
+📊 Quick Facts (tap to expand):
+• 1 in 5 HS players: concussion/season (CDC)
+• 99% deceased NFL: CTE (BU study)
+• Flag football: same skills, zero head impacts
+
+💡 If stuck (tap for suggestions):
+• Deflecting "builds character" → Flag does too
+• Deflecting "overreacting" → 99% is data, not opinion
+• Alternatives: Flag leagues, 7v7, other sports
+
+[Advocate speaks naturally, glances at phone only when needed]
+
+Advocate: "Hey, I wanted to share some research with you all..."
+
+[Conversation flows naturally - advocate in control]
+
+Parent: "But doesn't football build character?"
+
+[Advocate glances at phone for reminder]
+
+Advocate: "Absolutely—and flag football builds the same character
+          without the concussions. Leadership, teamwork, all there."
+
+[Conversation continues - phone mostly ignored]
+
+Parent: "Where would they even play flag football?"
+
+[Advocate checks local resources]
+
+Advocate: "Actually, Lincoln High just started a Saturday league.
+          It's competitive, and colleges are recruiting from flag now."
+
+[AR support is backup, not driving the conversation]
+```
+
+**Key Principles for AR Advocacy Support:**
+
+1. **Human-led, not script-led**
+   - You talk naturally, glance at phone if you forget a stat
+   - Not: Reading from screen like a robot
+
+2. **Opt-in, not default**
+   - Many people don't want or need this
+   - Choice to enable per encounter
+
+3. **Discreet, not intrusive**
+   - Small sidebar, not full-screen takeover
+   - Easy to minimize or disable mid-conversation
+
+4. **Reference, not script**
+   - Facts, stats, alternatives (things you might forget)
+   - Not: "Say this exact phrase" (that's weird)
+
+5. **Supplement expertise, don't replace it**
+   - Great advocates become even better with backup
+   - Not: Turn novices into automatons
+
+**What AR Advocacy Support Provides:**
+
+✅ **Fact-checking on demand**
+```
+"Was it 1 in 5 or 1 in 10? Let me check... 1 in 5, CDC 2023"
+```
+
+✅ **Memory aids for alternatives**
+```
+"What were those flag football leagues nearby again?
+ Oh right—Lincoln HS Saturdays, Riverside League Sundays"
+```
+
+✅ **Counters to common pushback**
+```
+[Parent says: "Scouts only look at tackle players"]
+[You think: "I know that's wrong but can't remember why"]
+[Glance at phone: "15% of NFL never played tackle in HS"]
+[You say: "Actually, a lot of pros came from flag or other sports"]
+```
+
+✅ **De-escalation reminders when tense**
+```
+[Conversation getting heated]
+[Phone vibrates: "Validate emotion, then reframe with data"]
+[You pivot: "I hear you—change is hard. But we have info now
+ that we didn't 10 years ago..."]
+```
+
+✅ **Resources to share afterward**
+```
+[Conversation went well]
+[You: "Want me to text you those studies?"]
+[Phone: One-tap to send fact sheet, local resources]
+```
+
+**What AR Advocacy Support Does NOT Do:**
+
+❌ Tell you what to say word-for-word (robotic, inauthentic)
+❌ Take over the conversation (you're in control)
+❌ Make you dependent on it (learn and internalize over time)
+❌ Replace genuine human connection (empathy, rapport, authenticity)
+❌ Turn you into a walking billboard (persuasion is relationship-first)
+
+**User Experience - Quit Companion Support (Human-First Example):**
+
+```
+[Companion arrives to help person with nicotine craving]
+
+Companion: [Genuinely present, phone in pocket]
+
+Person: "I'm really struggling. I don't think I can do this."
+
+Companion: [Makes eye contact, listens] "I hear you. That's so hard."
+
+[Natural silence - just walking together]
+
+Person: "How long until this gets easier?"
+
+Companion: [Glances at phone briefly] "From what I've read,
+           cravings peak around week 2, then it gets better.
+           You're in the hardest part right now."
+
+[Phone back in pocket, focus on person]
+
+Person: "I just want one cigarette."
+
+Companion: "What if we walk for 5 more minutes? Cravings usually
+           pass in 3-5 minutes. Let's see if this one does too."
+
+[Companion might have gotten the "3-5 minutes" reminder from AR,
+ but person never knows—conversation feels natural]
+```
+
+**The Balance:**
+- **With AR support:** "I have backup if I need it" (confidence boost)
+- **Without AR support:** "I got this on my own" (natural flow)
+- **Both are valid.** Use what works for you.
+
+**Technical Design for Non-Borg Experience:**
+
+```dart
+// AR Advocacy mode is MINIMAL by default
+class AdvocacySupportUI {
+  // Small, collapsible sidebar (not full-screen overlay)
+  Widget buildMinimalMode() {
+    return Positioned(
+      bottom: 100,
+      right: 20,
+      child: CollapsibleCard(
+        collapsed: true, // Starts minimized
+        width: 80, // Tiny when collapsed
+        child: Text("📊 Tap for facts"),
+        onTap: () => expandToShowTalkingPoints(),
+      ),
+    );
+  }
+
+  // Vibration alerts are GENTLE reminders, not commands
+  void sendGentleReminder(String context) {
+    if (userEnabledReminders && conversationTense) {
+      HapticFeedback.lightImpact(); // Subtle vibration
+      showSnackbar("Tip: Validate emotion first"); // Brief, dismissible
+    }
+  }
+
+  // Easy bailout - disable mid-conversation
+  Widget buildQuickDisable() {
+    return FloatingActionButton(
+      mini: true,
+      child: Icon(Icons.close),
+      onPressed: () {
+        disableAdvocacyMode();
+        showToast("Advocacy support disabled. You got this!");
+      },
+    );
+  }
+}
+```
+
+**Accessibility & Learning:**
+
+**For beginners:** AR support is training wheels
+- Use heavily at first (build confidence)
+- Gradually use less (internalize talking points)
+- Eventually disable entirely (you've learned it)
+
+**For experts:** AR support is reference material
+- Rarely needed
+- Glance for specific stats if asked
+- Mostly ignored
+
+**For everyone:** Choice and control
+- Enable/disable per encounter
+- Customize what you see (hide categories you don't need)
+- Share what worked (improve database for others)
+
+### 4.7 AR Advocacy Database - Call for Contributors
+
+**We need subject matter experts to build advocacy support databases!**
+
+**Content philosophy:**
+- **Reference material, not scripts** (facts, stats, alternatives)
+- **Conversational suggestions, not robotic phrases** ("Try mentioning..." not "Say exactly...")
+- **Backup for those who want it, invisible for those who don't**
+
+**Content needed for each advocacy scenario:**
+- **Brain-damaging sports:** CTE researchers, neurologists, former athletes, coaches
+- **Quit companions:** Addiction counselors, psychologists, former smokers/vapers
+- **Harm reduction:** Public health experts, needle exchange workers, overdose prevention specialists
+- **Consent education:** Sex educators, Title IX coordinators, survivors' advocates
+
+**How to contribute:**
+1. Submit talking points (as suggestions, not mandates)
+2. Add statistics (with sources for fact-checking)
+3. Share de-escalation techniques (that real humans actually use)
+4. Suggest alternatives (constructive solutions)
+5. Review for natural language (avoid corporate/robotic phrasing)
+
+**Example contribution format:**
+```yaml
+# docs/advocacy_databases/brain_damage_sports.yaml
+
+scenario: brain_damage_sport_dissuasion
+
+# These are REFERENCE facts, not scripts to read aloud
+statistics:
+  - headline: "1 in 5 high school football players suffer concussion per season"
+    source: "CDC, 2023"
+    how_to_use: "Mention if asked about frequency, but don't lead with scary stats"
+
+  - headline: "99% of deceased NFL players showed CTE"
+    source: "Boston University CTE Center, 2024"
+    how_to_use: "Save for pushback like 'you're overreacting'—this is hard data"
+
+# These are CONVERSATION STARTERS, not word-for-word scripts
+talking_points:
+  - category: deflecting_pushback
+    trigger: "builds character"
+    suggestion: "Agree football builds character, then pivot to flag football doing the same"
+    example_phrasing: "Totally agree—and flag football builds the same leadership and teamwork"
+    tone: conversational
+    note: "Don't be defensive, validate their point first"
+
+# These are ALTERNATIVES to offer, not ultimatums
+alternatives:
+  - suggestion: "Flag football leagues"
+    why_it_works: "Keeps what kids love (strategy, competition) without head impacts"
+    local_resources: "Lincoln HS flag league, Saturdays 9am"
+    how_to_introduce: "Ask if they've heard of the new flag leagues, don't demand they switch"
+```
+
+**Join the advocacy content team:**
+- GitHub: Tag issues with `#advocacy-database`
+- Email: advocacy-content@lifesaverlabs.org
+
+**Remember:** The goal is to help humans be better humans, not turn them into machines.
+
+### 4.3 AR Technical Architecture
+
+#### 4.3.1 Flutter AR Plugins
+
+**Recommended packages:**
+```yaml
+dependencies:
+  ar_flutter_plugin: ^0.7.3
+    # Cross-platform AR (ARCore + ARKit)
+
+  arcore_flutter_plugin: ^0.1.0
+    # Android-specific (if deeper ARCore integration needed)
+
+  arkit_plugin: ^1.0.7
+    # iOS-specific (if deeper ARKit integration needed)
+
+  geolocator: ^10.1.0
+    # GPS positioning for AR anchors
+
+  sensors_plus: ^4.0.0
+    # Compass, accelerometer for orientation
+
+  google_maps_flutter: ^2.5.0
+    # Route calculation, geocoding
+```
+
+#### 4.3.2 AR Anchor System
+
+**Concept:** Place virtual markers at real-world GPS coordinates
+
+```dart
+// Place AR marker at emergency location
+class EmergencyARMarker {
+  final LatLng location;
+  final String type; // 'patient', 'equipment', 'responder'
+  final String label;
+  final Color color;
+
+  ARNode createARNode(ARSessionManager arSessionManager) {
+    return ARNode(
+      type: NodeType.localGLTF2,
+      uri: "assets/ar/emergency_marker.gltf",
+      scale: Vector3(0.5, 0.5, 0.5),
+      position: calculateARPosition(location),
+      rotation: Vector4(0, 1, 0, 0),
+    );
+  }
+
+  Vector3 calculateARPosition(LatLng target) {
+    // Convert GPS coordinates to AR world coordinates
+    // relative to user's current position
+    final userLocation = getCurrentLocation();
+    final bearing = calculateBearing(userLocation, target);
+    final distance = calculateDistance(userLocation, target);
+
+    return Vector3(
+      distance * sin(bearing), // X
+      0, // Y (ground level)
+      distance * cos(bearing), // Z
+    );
+  }
+}
+```
+
+#### 4.3.3 AR Plane Detection
+
+**Use case:** Detect ground plane for placing directional arrows
+
+```dart
+arSessionManager.onPlaneOrPointTap = (List<ARHitTestResult> hits) {
+  if (hits.isNotEmpty) {
+    final hit = hits.first;
+
+    // Place arrow on detected ground plane
+    final arrowNode = ARNode(
+      type: NodeType.localGLTF2,
+      uri: "assets/ar/navigation_arrow.gltf",
+      position: hit.worldTransform.getColumn(3),
+      rotation: Vector4(0, 1, 0, calculateBearing()),
+    );
+
+    arSessionManager.addARNode(arrowNode);
+  }
+};
+```
+
+#### 4.3.4 Performance Considerations
+
+**AR is resource-intensive:**
+- Camera stream processing
+- Real-time position tracking
+- 3D rendering
+- ML inference (for object detection)
+
+**Optimization strategies:**
+1. **Battery management:** Offer "AR mode" toggle, fallback to 2D map
+2. **Thermal throttling:** Reduce AR fidelity if device overheating
+3. **Network usage:** Download AR assets once, cache locally
+4. **Accessibility:** Always provide non-AR alternative (for older devices)
+
+**Fallback for devices without AR:**
+```dart
+Future<bool> checkARAvailability() async {
+  if (Platform.isAndroid) {
+    return await ArCoreController.checkArCoreAvailability();
+  } else if (Platform.isIOS) {
+    return await ArKitController.checkArKitAvailability();
+  }
+  return false;
+}
+
+// In navigation screen
+final arAvailable = await checkARAvailability();
+
+if (arAvailable && userPrefersAR) {
+  navigateWithAR();
+} else {
+  navigateWith2DMap(); // Standard Google Maps
+}
+```
+
+### 4.4 AR Privacy & Safety Considerations
+
+#### 4.4.1 Camera Privacy
+
+**Concerns:**
+- Responders using AR may inadvertently record sensitive scenes
+- Camera pointed at patient during medical emergency
+- Bystanders captured in AR footage
+
+**Mitigations:**
+- ❌ **Never record AR camera feed** (process in real-time only)
+- ✅ **Display "AR Active - Camera On" indicator** prominently
+- ✅ **Auto-disable AR when emergency resolved**
+- ✅ **Privacy mode:** Blur background except navigation markers
+- ✅ **User control:** Easy toggle to disable AR mid-response
+
+```dart
+// Privacy-preserving AR mode
+ARSession(
+  recordingEnabled: false, // Never record
+  backgroundBlur: true, // Blur everything except markers
+  showCameraIndicator: true, // Prominent "Camera Active" icon
+);
+```
+
+#### 4.4.2 Cognitive Load
+
+**Concern:** AR may overwhelm responders with information during high-stress emergency
+
+**Mitigations:**
+- Start with **minimal AR** (just directional arrow)
+- **Progressive disclosure:** Show more info as responder approaches
+- **Distraction-free mode:** Hide all UI except critical navigation
+- **Audio cues:** Voice guidance alongside AR (accessible alternative)
+
+**Example: Minimal AR mode**
+```
+Stage 1 (far away): Single arrow + distance
+Stage 2 (approaching): Building highlight + address
+Stage 3 (at entrance): Door highlight + apartment number
+Stage 4 (inside): Role assignment + patient location
+```
+
+#### 4.4.3 Accessibility
+
+**AR may not work for:**
+- Visually impaired users
+- Users with older devices (no ARCore/ARKit)
+- Users in very dark environments (camera can't see)
+- Users with shaky hands (AR anchors unstable)
+
+**Always provide accessible alternatives:**
+- Voice-guided navigation (turn-by-turn audio)
+- High-contrast 2D map
+- Text-based directions
+- Vibration cues (haptic feedback for turns)
+
+### 4.5 AR Feature Roadmap
+
+**MVP (Stage 1):**
+- ✅ Basic AR turn-by-turn navigation to emergency
+- ✅ Distance markers and directional arrows
+- ✅ 2D map fallback for devices without AR
+
+**Stage 2 (Months 3-6):**
+- ✅ Multi-responder coordination (show other responders in AR)
+- ✅ Equipment locator (AEDs, fire extinguishers)
+- ✅ Building entrance/door highlighting
+
+**Stage 3 (Months 6-12):**
+- ✅ CPR guidance overlay with depth/rate feedback
+- ✅ Scene safety assessment (hazard markers)
+- ✅ Night mode with enhanced vision
+
+**Stage 4 (Year 2+):**
+- ✅ ML-based object detection (AED recognition, house numbers)
+- ✅ Indoor mapping for large buildings (malls, offices, hospitals)
+- ✅ AR collaboration (responders see each other's view)
+- ✅ Integration with smart AED devices (real-time feedback)
+
+### 4.6 Call to Action for AR Developers
+
+**We need AR/VR specialists to help design and build these features!**
+
+**Skills needed:**
+- ARCore / ARKit experience
+- Flutter AR plugin development
+- 3D modeling (GLTF/GLB assets for markers)
+- Computer vision / ML (object detection)
+- UX design for high-stress environments
+- Accessibility expertise (non-visual AR alternatives)
+
+**Open questions for AR community:**
+1. What's the best way to handle AR in low-light conditions?
+2. How do we balance information density vs. cognitive load?
+3. What AR features would YOU want as a first responder?
+4. How can we make AR accessible to visually impaired users?
+5. What's the best fallback for devices without AR support?
+
+**Join the discussion:**
+- GitHub Issues: Tag `#AR` or `#augmented-reality`
+- Email: ar-team@lifesaverlabs.org
+- Discord: #ar-features channel (coming soon)
+
+---
+
+## 5. Armed Responder Protocols
