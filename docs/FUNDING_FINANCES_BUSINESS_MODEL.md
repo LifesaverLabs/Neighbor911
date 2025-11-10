@@ -10,7 +10,7 @@
 
 While this situation isn't ideal for recruiting and sustaining the widest possible network of talent, we hope that many will step forward out of:
 - **Civic motivation** - A desire to strengthen community resilience and emergency response
-- **Civigious motivation** - A blend of civic duty and civic religious calling to serve others
+- **Civigious motivation** - A blend of civic duty and civic religious calling to serve others (civigion.us will be built and launched soon to better explain, popularize, and propound the concept of local, national, and international civic religion)
 - **Religious motivation** - Faith-based commitment to helping neighbors in need
 
 We recognize the significant sacrifice this represents and deeply appreciate all volunteer contributions.
