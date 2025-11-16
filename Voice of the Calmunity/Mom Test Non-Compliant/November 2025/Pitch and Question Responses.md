@@ -80,8 +80,6 @@ I suggested deploying Neighbor 911 responders as witnesses to house fires, allow
 
 Hearing this, I recognized my relative ignorance about these choices and stated I wouldn't involve Neighbor 911 in active fire rescue.
 
-However, I've since reconsidered. Reviewing the Radical Kindness episode of Hidden Brain and reading about Danny Trejo and Cory Booker rushing to save people—Trejo after a car crash gas spill threatened a child, mother, and grandmother; Booker when a neighbor's child faced immolation during a house fire—I wonder whether Neighbor 911 should wake and deploy people like Trejo and Booker to make their own judgments. We would urge them not to rush in while making them aware of life-threatening emergencies occurring nearby, assuming they're adequately informed about the dangers and risks of worsening situations by entering burning buildings. If, after considering everything, they voluntarily choose to intervene based on validated facts on the ground, perhaps that's their decision to make.
-
 ### Other Medical Emergencies
 
 We discussed cardiac arrest rescue and choking alongside drowning.
@@ -100,7 +98,7 @@ Separating witnessed versus unwitnessed out of hospital cardiac arrest statistic
 
 ## Topics Not Yet Covered
 
-I didn't ask about handling forced entry in respiratory compromise cases—I need to return soon to discuss this with the Station Chief.
+I didn't ask about handling forced entry in respiratory compromise cases—I need to return soon to discuss this with the Station Chief. It's a very difficult key topic.
 
 I didn't discuss hosting drone-delivered AEDs. The dream scenario: a 911 call triggers Neighbor 911 alerts, AED drone dispatch, and EMS response simultaneously. Two neighbors perform CPR, sharing the load and ensuring high-quality compression and rescue breaths, while a third neighbor awaits the AED. Ideally, the AED is applied before emergency services arrive, though EMS takes over professionally upon arrival.
 

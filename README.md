@@ -22,6 +22,35 @@ Neighbor 911 is a community emergency response network that connects people in c
 3. **Rapid Response** - Neighbors arrive in minutes with turn-by-turn navigation, while professional help is on the way
 4. **Lives Are Saved** - Whether through CPR, naloxone, or simply human presence, neighbors make the critical difference
 
+### Emergency Response Resources & Calmunity Partners
+
+**Neighbor 911 is part of a larger emergency response "calmunity."** We believe in promoting existing solutions, training organizations, apps, and community groups that are already saving lives.
+
+**We maintain country-specific resource guides covering:**
+- Emergency response apps (like PulsePoint™ in the US)
+- CPR, AED, and first aid training organizations
+- Community emergency response programs (like CERT)
+- Naloxone access and overdose response training
+- Mental health first aid resources
+- Local emergency preparedness initiatives
+
+**📍 Browse Resources by Country:**
+- [🇺🇸 United States](docs/resources/united-states.md) - PulsePoint, Red Cross, AHA, CERT, and more
+- [🌍 All Countries](docs/resources/) - Growing list of international resources
+
+**✍️ Help Us Build Global Coverage:**
+
+**We need YOUR help!** No one knows emergency response resources better than locals who live there and speak the language. We're seeking volunteers to:
+
+- **Write resource guides for your country** - Share the apps, training providers, and community programs you know and trust
+- **Translate existing guides** - Make emergency preparedness accessible in your native language
+- **Keep guides updated** - Help verify and maintain accurate contact information and program details
+- **Add local context** - Include cultural considerations and region-specific emergency response practices
+
+**Why contribute?** Emergency preparedness saves lives. By documenting resources in your country, you help thousands of people discover training, apps, and community programs they never knew existed.
+
+**[See our contribution guide](docs/resources/README.md)** or contact team@lifesaverlabs.org to start a new country guide.
+
 ### Join the Movement
 
 **We're building a world where no one has to face an emergency alone.** Where communities look out for each other. Where technology amplifies our natural instinct to help our neighbors.

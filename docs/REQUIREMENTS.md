@@ -761,6 +761,53 @@ Responder can update status:
 - Unified training/certification platform
 - Cross-app alerts (e.g., Safeword emergency → Neighbor 911 responders)
 
+#### 4.5.3 PulsePoint Integration (Proposed Partnership)
+
+**Status:** Not yet partnered - seeking future integration
+
+**Vision:**
+As a calmunity, we work heavily to promote PulsePoint™ as an immediate working solution for quarter-mile (0.4 km) and half-mile (0.8 km) neighborhood CPR response. PulsePoint is a proven, deployed system already operating in 4,500+ US communities. We envision a future partnership that creates bidirectional alert integration.
+
+**Proposed Integration Features:**
+
+**Outbound to PulsePoint:**
+- Neighbor 911 sends cardiac arrest emergency alerts to PulsePoint calmunity
+- Enables PulsePoint-trained CPR responders to receive our cardiac emergency alerts
+- Expands response coverage for cardiac emergencies
+
+**Inbound from PulsePoint:**
+- Neighbor 911 ingests and accepts PulsePoint cardiac emergency alerts
+- Dispatches our Minute Responders to PulsePoint-originated cardiac emergencies
+- Creates unified response network maximizing coverage
+
+**Technical Requirements (Future):**
+- API integration with PulsePoint backend systems
+- Unified alert format and emergency type mapping
+- Deduplication logic to prevent double-alerting same responders
+- Geographic boundary coordination
+- Response confirmation sync between platforms
+
+**User Story:**
+*As a CPR-certified Minute Responder, I want to receive cardiac emergency alerts from both Neighbor 911 and PulsePoint, so that I can respond to any nearby cardiac emergency regardless of which platform originated the alert.*
+
+**Acceptance Criteria:**
+- Responders can opt-in to receive PulsePoint alerts within Neighbor 911 app
+- Cardiac emergencies created in Neighbor 911 are forwarded to PulsePoint network
+- PulsePoint cardiac emergencies trigger Neighbor 911 responder dispatch
+- No duplicate alerts if responder is registered on both platforms
+- Response tracking synced across both platforms
+
+**Partnership Goals:**
+- Support and amplify PulsePoint's life-saving cardiac response mission
+- Complement PulsePoint by expanding to additional emergency types (overdose, choking, mental health, etc.)
+- Never compete - always collaborate to maximize lives saved
+- Share best practices and lessons learned
+
+**Phase:**
+- Phase 1 (MVP): Promote PulsePoint to users, encourage download and activation
+- Phase 2 (Post-MVP): Establish partnership discussions with PulsePoint
+- Phase 3 (Future): Implement technical integration if partnership achieved
+
 ### 4.6 Responder Rewards System
 
 **Philosophy: Community Investment in Rapid Response**
@@ -1910,7 +1957,202 @@ Educational institutions cannot simultaneously:
 
 ## 15. Future Vision (Beyond MVP)
 
-### 15.1 Law Enforcement Integration
+### 15.1 Global Calmunity Coverage Map (Neighbor911.org)
+
+**Vision:** Create a global, publicly accessible map showing emergency response resources and local calmunity networks at every level - from hyperlocal neighbor groups to national emergency apps.
+
+**Problem:**
+- Neighbors want to help each other but don't know how to organize
+- Emergency response resources are fragmented and hard to discover
+- No way to see coverage gaps where networks are urgently needed
+- Hyperlocal solutions work best, but they need to be visible and connected
+
+**Solution: Neighbor911.org**
+
+A global mapping platform where anyone can:
+1. **Enter their address** and see the complete "resource stack" available to them
+2. **Claim territory** for their local calmunity group
+3. **Register preferred resources** for their neighborhood
+4. **Find coverage gaps** and start new networks
+5. **Connect (mesh) with neighboring networks** for complete coverage
+
+#### 15.1.1 Multi-Layer Resource Stack
+
+**When a user enters their address, they see ALL resources at every level:**
+
+**Layer 1: Hyperlocal (0-0.25 miles / 0-400m)**
+- Immediate neighbor network (their street, block, apartment building)
+- Contact info for local calmunity group leader
+- List of neighbors with specific skills (CPR certified, has AED, speaks multiple languages, etc.)
+- Preferred messaging platform (WhatsApp group, Signal, paper call tree, etc.)
+- Territory boundaries clearly marked
+
+**Layer 2: Local (0.25-1 mile / 400m-1.6km)**
+- Nearby calmunity groups (neighboring streets/blocks)
+- Community emergency response teams (CERT, volunteer groups)
+- Nearby responders willing to travel slightly farther
+- Meshed network connections between hyperlocal groups
+
+**Layer 3: Regional (City/County)**
+- Municipal emergency services
+- Fire departments, police, EMS
+- Community health centers
+- Training providers (Red Cross, AHA, local instructors)
+- Equipment locations (public AEDs, naloxone distribution sites)
+
+**Layer 4: National**
+- Best-in-class emergency response apps operating in that country
+  - US: PulsePoint™, Neighbor 911™ (when built)
+  - UK/Australia: GoodSAM
+  - Pakistan: Rescue 1122
+  - Brazil: SAMU apps
+  - India: 108/112 systems
+  - Indonesia: Local emergency apps
+  - And all other country-specific leaders
+- National emergency numbers
+- National training organizations
+- Government disaster preparedness programs
+
+**Layer 5: Global**
+- International resources (for travelers, expats, border regions)
+- Multi-language emergency resources
+- International emergency response best practices
+
+#### 15.1.2 Territory Claiming & Registration
+
+**Hyperlocal Group Registration:**
+
+Any neighbor can claim a territory and register their calmunity group:
+
+**Registration Process:**
+1. **Draw boundaries** on the map (recommended: 0.25 mile / 400m radius, or specific street boundaries)
+2. **Provide group details:**
+   - Group name (e.g., "Oak Street Emergency Network", "Building 42 Response Team")
+   - Contact person (optional - can be anonymous group)
+   - Communication platform used (WhatsApp, Signal, paper list, etc.)
+   - Number of participating neighbors
+   - Skills available (how many CPR certified, who has AEDs, etc.)
+   - Languages spoken
+3. **List preferred local resources:**
+   - Recommended training providers
+   - Nearest AED locations
+   - Preferred emergency apps
+   - Local emergency contacts
+4. **Invite neighbors** to join (public URL for the group)
+
+**Territory Guidelines:**
+- **Recommended size:** 0.25-0.5 mile radius (400-800m) - small enough to be manageable
+- **Overlapping is encouraged** - redundancy saves lives
+- **Clear boundaries** - neighbors should know which group(s) cover their home
+- **No ownership** - territories are claimed by whoever organizes, not owned
+- **Coverage gaps highlighted** - map shows areas with no registered networks
+
+#### 15.1.3 Meshing Networks Together
+
+**Inter-Network Coordination:**
+
+Groups can establish connections with neighboring networks:
+
+- **Mutual aid agreements** - "We'll help you, you help us"
+- **Shared contact channels** - Group leaders can communicate during emergencies
+- **Redundant coverage** - Overlapping territories mean help is always nearby
+- **Backup coordination** - If one group can't respond, neighboring group steps in
+
+**Meshing Benefits:**
+- **Complete coverage** - Every home is within 2-3 minute walk of multiple networks
+- **Resilience** - Networks support each other during large-scale emergencies
+- **Resource sharing** - Groups can share equipment, training, best practices
+- **Scalability** - Small groups mesh to create neighborhood-wide, then city-wide coverage
+
+**Visual on Map:**
+- Colored territories showing each hyperlocal group
+- Connections between meshed groups
+- Coverage gaps in red/orange
+- Well-covered areas in green
+- Click any territory to see group details and join
+
+#### 15.1.4 Prepopulation & Discovery
+
+**Initial Map State:**
+
+Before hyperlocal groups register, the map is prepopulated with:
+- **National emergency apps** available in that country (PulsePoint, GoodSAM, etc.)
+- **Emergency services** (fire, police, hospitals)
+- **Training providers** (Red Cross, AHA, local programs)
+- **Public AED locations**
+- **Government emergency resources**
+
+**Progressive Enhancement:**
+As neighbors organize, hyperlocal groups are added on top of the base layer, creating increasingly rich coverage.
+
+**Discovery Features:**
+- **"Start a group" button** for areas with no coverage
+- **"Join nearby group" button** for areas with existing coverage
+- **"I want to help" form** - matches volunteers with groups needing members
+- **Coverage heatmap** - Shows where networks are strong vs. where they're needed
+
+#### 15.1.5 Technical Requirements
+
+**Mapping Platform:**
+- Accessible globally (not blocked in any country)
+- Works on mobile and desktop
+- Supports all major browsers
+- Offline mode for viewing registered groups
+- Options: OpenStreetMap, Google Maps, Mapbox, or custom solution
+
+**Data Storage:**
+- Public registry of hyperlocal groups (privacy-preserving)
+- Contact info only shown to neighbors within or adjacent to territory
+- Anonymous registration supported
+- Groups can be public or private (by invitation only)
+
+**Search & Discovery:**
+- Enter address → see all layers of resources
+- Filter by resource type (CPR training, AEDs, calmunity groups, etc.)
+- Language filtering
+- Emergency type filtering (cardiac, overdose, mental health, etc.)
+
+**Integration:**
+- API for emergency apps to register as national resources
+- API for local governments to add official resources
+- Import public AED registries
+- Import training provider databases
+
+#### 15.1.6 Privacy & Safety Considerations
+
+**Privacy:**
+- Hyperlocal groups choose what to share publicly
+- Contact info protected (only shown to nearby neighbors)
+- Individual neighbor identities not disclosed without consent
+- Groups can be "verified" or "unverified" (community-moderated)
+
+**Safety:**
+- Groups can be reported for suspicious activity
+- Verification system for legitimate community groups
+- Clear disclaimers about informal vs. official emergency services
+- Emphasis: These are neighbor networks, NOT replacements for 911
+
+#### 15.1.7 Call to Action Integration
+
+**Every country resource guide should include:**
+
+"Want to start a neighborhood emergency network? Register your group on Neighbor911.org and claim your territory on the map. Connect with neighboring groups and help build complete coverage for your community."
+
+**Until the platform is built:**
+- Encourage use of local mapping tools (Google Maps pins, OpenStreetMap)
+- Manual directories of neighborhood groups
+- Community bulletin boards showing coverage areas
+
+**This feature enables:**
+- Hyperlocal organization without waiting for Neighbor 911 app to be built
+- Discovery of existing emergency resources
+- Visible coverage gaps that motivate network creation
+- Meshing of small groups into comprehensive neighborhood coverage
+- Integration of best-in-class local apps with grassroots neighbor networks
+
+---
+
+### 15.2 Law Enforcement Integration
 
 #### **Police Chase / Active Pursuit Alert (High Priority Future Feature)**
 
