@@ -76,6 +76,23 @@ Your neighbors are already there. They can:
 
 **[See our contribution guide](docs/country_resources/README.md)** or contact team@lifesaverlabs.org to start a new country guide.
 
+### 🏘️ Start Building Your Emergency Network Today
+
+**Don't wait for the app—start building your hyperlocal emergency response network right now.**
+
+**[📖 Know Thy Neighbor Guide](docs/Know%20Thy%20Neighbor.md)** - Learn how to create a "micro-calmunity" (μcalmunity) in your building or neighborhood using simple tools like WhatsApp and cookies.
+
+**What you'll learn:**
+- Form a hyperlocal emergency response group (5-10 neighbors within 90 seconds)
+- Run "Heartbeat Drills" - fun practice emergencies with cookie rewards
+- Build trust before crises happen
+- Distribute CPR face shields to your neighbors
+- Create muscle memory for real emergencies
+
+**The best time to meet your neighbors is before an emergency.** This guide shows you how to save lives starting today, even before Neighbor 911 launches.
+
+**Credit:** The Heartbeat Drill concept comes from Shai Schecter (Focusmate) and Sam Pevzner, MD, PhD.
+
 ### Join the Movement
 
 **We're building a world where no one has to face an emergency alone.** Where communities look out for each other. Where technology amplifies our natural instinct to help our neighbors.
