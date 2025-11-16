@@ -49,6 +49,125 @@ Based on US data, the most common time-critical emergencies where neighbors save
 
 ---
 
+## 🤝 Active & Proposed Partnerships
+
+### United Hatzalah
+**Website:** [israelhatzalah.org](https://www.israelhatzalah.org/) | [United Hatzalah of America](https://www.unitedrescue.org/)
+**Status:** Operational (primarily Israel, expanding internationally)
+**Partnership Status:** 🟡 Proposed Partnership - Seeking Collaboration
+
+**What They Do:**
+United Hatzalah is a volunteer-based emergency medical service that helped inspire Neighbor 911™ with their extraordinary goal of **90-second response times**. They dispatch fully-trained emergency medical responders (EMTs and paramedics) on motorcycles, bicycles, and foot to reach patients before ambulances arrive.
+
+**Their Model:**
+- Professional/semi-professional volunteers (EMTs, paramedics, doctors)
+- High certification and training standards
+- Proven 90-second response time success in dense urban areas
+- Primary focus: Israel, with expansion to other countries
+
+**How Neighbor 911™ Differs & Complements:**
+United Hatzalah maintains rigorous professional standards, requiring extensive medical training. This high-quality bar has limited their geographic growth—they can only expand where enough certified responders exist.
+
+**Neighbor 911™ takes a complementary approach:**
+- **Lower barrier to entry** - Amateur, non-professional neighbors can help in ALL emergencies, including cardiac arrest
+- **Even faster first response** - The neighbor 30 seconds away can start CPR/chest compressions before even the fastest professional arrives
+- **Broader emergency types** - Cardiac arrest, wellness checks, mental health support, addiction crises, consent conflicts, choking, falls, overdoses
+- **Decentralized growth** - Any neighborhood can start immediately with basic interventions
+- **"Radical kindness" model** - Caring presence + basic CPR can save lives while professionals arrive
+- **Heartbeat Drills** - Community building through emergency practice parties
+
+**Proposed Partnership Vision:**
+We are seeking deeper collaboration with United Hatzalah and similar professional emergency response organizations to:
+
+1. **Layer response coverage** - Immediate neighbor response (0-90 seconds) + professional responder arrival (90-180 seconds) = maximum survival
+2. **Coordinate dispatch** - Send both neighbors AND professionals simultaneously to cardiac arrests and other emergencies
+3. **Share alert infrastructure** - Unified notification systems that dispatch both professionals and neighbors
+4. **Accelerate 90-second coverage globally** - Combine professional excellence with grassroots neighbor networks
+5. **Cross-training pathways** - Neighbors who start with basic CPR can pursue professional certification through United Hatzalah
+
+**Why This Partnership Matters:**
+- United Hatzalah proves 90-second professional response is achievable
+- Neighbor 911™ proves immediate neighbor response (often 30-60 seconds) is even faster
+- Together: someone starts CPR in 30-60 seconds (neighbor), professional equipment arrives in 90-180 seconds (United Hatzalah), ambulance arrives in 8-15 minutes
+- **Result:** Maximum survival rates across all emergency types
+
+**Geographic Opportunities:**
+- United States (both organizations expanding)
+- Israel (United Hatzalah established, Neighbor 911™ international support)
+- Other countries with dense populations and emergency response gaps
+
+**Contact for Partnership Discussions:**
+- Email: team@lifesaverlabs.org
+- Subject line: [PARTNERSHIP - United Hatzalah]
+
+### American Red Cross
+**Website:** [redcross.org](https://www.redcross.org/)
+**Status:** Operational nationwide
+**Partnership Status:** 🟡 Proposed Partnership - Training & Education Collaboration
+
+**What They Do:**
+The American Red Cross is the nation's premier provider of CPR, first aid, AED, and emergency preparedness training. They train millions of Americans annually and provide disaster relief, blood donation services, and emergency response support.
+
+**Their Strengths:**
+- Established training infrastructure nationwide
+- Trusted brand with 140+ years of emergency response experience
+- Comprehensive curriculum covering CPR, AED, first aid, water safety
+- Mobile training units and community outreach programs
+- Disaster response and preparedness education
+
+**Proposed Partnership Vision:**
+We seek collaboration with the American Red Cross to:
+
+1. **In-app training integration** - Link Neighbor 911 users directly to Red Cross CPR/AED certification courses
+2. **Certification verification** - Allow users to display Red Cross certifications in their Neighbor 911 responder profiles
+3. **Micro-calmunity training events** - Red Cross instructors lead Heartbeat Drill training sessions for neighborhood emergency networks
+4. **Cross-promotion** - Red Cross promotes Neighbor 911 to newly certified CPR responders as a way to use their skills
+5. **Training scholarships** - Partner to subsidize CPR training for high-need communities building emergency networks
+
+**Why This Partnership Matters:**
+- Red Cross trains millions in CPR → Neighbor 911 gives them immediate ways to use those skills
+- Neighbor 911 motivates people to get trained → Red Cross provides the training
+- Together: more trained neighbors + more active responders = maximum lives saved
+
+**Contact for Partnership Discussions:**
+- Email: team@lifesaverlabs.org
+- Subject line: [PARTNERSHIP - American Red Cross]
+
+### American Heart Association (AHA)
+**Website:** [heart.org](https://www.heart.org/) | [CPR Training](https://cpr.heart.org/)
+**Status:** Operational nationwide
+**Partnership Status:** 🟡 Proposed Partnership - Training & Research Collaboration
+
+**What They Do:**
+The American Heart Association is the leading authority on cardiovascular health and resuscitation science. They develop CPR guidelines, provide training certification, and conduct critical research on cardiac emergency response.
+
+**Their Strengths:**
+- Gold standard CPR and resuscitation guidelines (updated every 5 years)
+- Hands-Only CPR campaign promoting compression-only CPR for bystanders
+- Extensive research on cardiac arrest survival and response times
+- Training programs for healthcare providers and lay rescuers
+- National advocacy for AED accessibility and Good Samaritan laws
+
+**Proposed Partnership Vision:**
+We seek collaboration with the AHA to:
+
+1. **Hands-Only CPR promotion** - Integrate AHA's Hands-Only CPR training into Neighbor 911 onboarding for non-certified users
+2. **Research collaboration** - Partner on studies measuring neighbor response time impact on cardiac arrest survival
+3. **Training certification pathways** - Direct Neighbor 911 users to AHA CPR courses and track certification
+4. **AED access mapping** - Collaborate to map and share AED locations across neighborhoods
+5. **Data sharing** - Aggregate anonymous cardiac arrest response data to improve AHA guidelines and Neighbor 911 dispatch algorithms
+
+**Why This Partnership Matters:**
+- AHA research shows every minute without CPR reduces survival by 10% → Neighbor 911 gets CPR started in 30-90 seconds
+- AHA promotes Hands-Only CPR for untrained bystanders → Neighbor 911 dispatches those bystanders immediately
+- Together: evidence-based protocols + rapid neighbor dispatch = proven survival improvements
+
+**Contact for Partnership Discussions:**
+- Email: team@lifesaverlabs.org
+- Subject line: [PARTNERSHIP - American Heart Association]
+
+---
+
 ## Emergency Response Apps
 
 ### PulsePoint™
