@@ -76,9 +76,11 @@ We're planning to build **Neighbor911.org** - a global mapping solution where:
 10. [🇲🇽 Mexico](mexico.md) (~130M) - 🚧 Seeking Contributors | [Español](mexico-es.md)
 
 **Other Countries:**
+- [🇬🇧 United Kingdom](united-kingdom.md) (~68M) - 🚧 Seeking Contributors
 - [🇨🇦 Canada](canada.md) (~40M) - 🚧 Seeking Contributors | [Français](canada-fr.md)
 - [🇦🇺 Australia](australia.md) (~26M) - 🚧 Seeking Contributors
-- [🇬🇧 United Kingdom](united-kingdom.md) (~68M) - 🚧 Seeking Contributors
+- [🇵🇹 Portugal](portugal.md) (~10M) - ✅ Initial Version | Need Portuguese Translation
+- [🇮🇱 Israel](israel.md) (~9.5M) - ✅ Initial Version | Need Hebrew/Arabic Translation
 
 **Don't see your country listed?** Help us add it! Use our [template](TEMPLATE.md) to create a new country guide.
 
